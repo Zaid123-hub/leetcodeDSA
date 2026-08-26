@@ -1,7 +1,6 @@
 class Solution {
 public:
  void insert(TreeNode* root, int val){
-    if(root==NULL) root = new TreeNode(val);
      if(root->val>val){ //go left
             if(root->left == NULL) { // attach it here
                 TreeNode* temp = new TreeNode(val);
@@ -23,8 +22,12 @@ public:
 
  }
     TreeNode* insertIntoBST(TreeNode* root, int val) {
+        if(root==NULL) {
+            root = new TreeNode(val);
+        return root;
+        }
         insert(root,val);
-        if(root==NULL) root = new TreeNode(val);
+        
             return root;
         
     }
