@@ -2,10 +2,10 @@ class Solution {
 public:
     int countSpecialIntegers(vector<int>& nums) {
         int n = nums.size();
-        unordered_map<int,int>mp;
-        for(int x : nums){
-            mp[x]++;
-        }
+        // unordered_map<int,int>mp;
+        // for(int x : nums){
+        //     mp[x]++;
+        // }
         int ans = 0;
         vector<int>block(101,0);
         block[nums[0]]++;
