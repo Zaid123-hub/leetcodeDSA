@@ -23,13 +23,12 @@ public:
             long long count = 0;
               long long nd = d;
         while(d>0){
-            int digit = d%10;
             count++;
             d = d/10;
         }
-
-            long long x = nd/power(10,(count-width));
-            long long y = nd%power(10,(count-width));
+                long long p = power(10,(count-width));
+            long long x = nd/p;
+            long long y = nd%p;
             ans.push_back(power(x,y));
         }
         long long sum = 0;
