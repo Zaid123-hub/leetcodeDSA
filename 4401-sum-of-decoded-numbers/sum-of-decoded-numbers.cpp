@@ -14,9 +14,11 @@ public:
     return result;
 }
 
+
     int sumDecoded(vector<long long>& nums) {
         int n = nums.size();
-        vector<long long> ans;
+        long long sum = 0;
+       
         for(int i=0;i<n;i++){
             long long width = nums[i]%10;
             long long d = nums[i]/10;
@@ -29,12 +31,9 @@ public:
                 long long p = power(10,(count-width));
             long long x = nd/p;
             long long y = nd%p;
-            ans.push_back(power(x,y));
+         sum = sum+power(x,y);
         }
-        long long sum = 0;
-        for(int i=0;i<ans.size();i++){
-            sum+=ans[i];
-        }
+        
         return sum%1000000007;
 
     }
