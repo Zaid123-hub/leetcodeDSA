@@ -16,6 +16,5 @@ public:
         if(nums1[0] % 2 != 0) return true;
         else return false;
         // trying making all e
-        return false;
     }
 };
