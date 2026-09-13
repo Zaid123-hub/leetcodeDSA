@@ -8,7 +8,7 @@ public:
             mp[nums[i]].push_back(i);
         }
         for(auto x:mp){
-            vector<int> v = x.second;
+            vector<int> &v = x.second;
             if(v.size()==3){
                 if(v[1]-v[0]==v[2]-v[1]) count++;
             }
