@@ -1,18 +1,28 @@
 class Solution {
 public:
     int countSpecialIntegers(vector<int>& nums) {
-        int ans = 0;
-        unordered_map<int,vector<int>>mp;
-        for(int i = 0;i<nums.size();i++){
-            mp[nums[i]].push_back(i);
+        int n = nums.size();
+        int count = 0;
+        unordered_map<int,int>mp;
+        for(int i=0;i<n;i++){
+            mp[nums[i]]++;
+
         }
-        for(auto &x : mp){
-            int num = x.first;
-            vector<int> v = x.second;
-            if(v.size() == 3 && ((v[1]-v[0]) == (v[2]-v[1]))){
-                ans ++;
+        for(auto x:mp){
+            if(x.second==3) {
+                int pehla = -1;
+                int second = -1;
+                int third = -1;
+                for(int i=0;i<n;i++){
+                    if(nums[i]==x.first) {
+                        if(pehla==-1) pehla = i;
+                        else if(second==-1) second = i;
+                        else third = i;
+                    }
+                }
+                if(second-pehla==third-second) count++;
             }
         }
-        return ans;
+        return count;
     }
 };
