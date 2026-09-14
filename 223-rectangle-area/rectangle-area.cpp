@@ -8,7 +8,7 @@ public:
        int commonArea = 0;
        int A1 = (ax2-ax1)*(ay2-ay1);
        int A2 = (bx2-bx1)*(by2-by1);
-       if(cArea==true){
+       if(cArea){
         commonArea = (min(ax2, bx2) - max(ax1, bx1))*(min(ay2, by2) - max(ay1, by1));
        }
        int totalarea = A1+A2-commonArea;
